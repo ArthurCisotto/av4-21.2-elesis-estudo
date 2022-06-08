@@ -1,0 +1,7 @@
+vmtranslator/VMTranslator.class
+vmtranslator/Error.class
+vmtranslator/VMtranslate.class
+vmtranslator/Parser.class
+vmtranslator/Code.class
+vmtranslator/VMtranslate$1.class
+vmtranslator/Parser$CommandType.class
