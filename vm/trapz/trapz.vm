@@ -1,4 +1,11 @@
 function trapz 0
-
-
+	push argument 2
+	push argument 0
+	sub
+	push argument 1
+	push argument 3
+	add
+	call mult 2
+	push constant 2
+	call div 2
 	return

@@ -1,22 +1,25 @@
-function div 2
-	push constant 0
-	pop local 0
-	push argument 0
-	pop local 1
-label LOOP_START
-	push local 1
-	push argument 1
-	sub
-	pop local 1
-	push local 1
-	push constant 0
-	lt
-	if-goto end
-	push local 0
-	push constant 1
-	add
-	pop local 0
-	goto LOOP_START   
-label end
-	push local 0
+function div 3
+	push constant 0 // coloca 0 no topo da pilha
+	pop local 2 // coloca o valor 0 na variavel local 2 (contador resultado da divisao)
+	push argument 0 // coloca valor do argumento 0 na pilha 
+	pop local 0 // coloca valor do argumento 0 na variavel local 0
+	push argument 1 // coloca valor do argumento 1 na pilha 
+	pop local 1 // coloca valor do argumento 1 na variavel local 1
+label loop // label do loop 
+	push local 0 // coloca valor da variavel local 0 na pilha 
+	push local 1 // coloca valor da variavel local 1 na pilha
+	lt // compara se o valor da variavel local 0 é menor que o valor da variavel local 1
+	if-goto end // se for verdadeiro, pula para o label end
+	push local 0 // coloca valor da variavel local 0 na pilha
+	push local 1 // coloca valor da variavel local 1 na pilha
+	sub // subtrai o valor da variavel local 1 do valor da variavel local 0
+	pop local 0 // coloca o valor da subtracao na variavel local 0
+	push constant 1 // coloca 1 na pilha 
+	push local 2 // coloca valor da variavel local 2 na pilha  (contador resultado da divisao)
+	add // soma 1 ao valor da variavel local 2 (resultado+=1)
+	pop local 2 // coloca o valor da soma na variavel local 2 novamente (contador resultado da divisao)
+	goto loop // volta para o label do loop
+label end  // label do fim do loop
+	push local 2 // coloca valor da variavel local 2 na pilha (resultado da divisao)
 	return
+
