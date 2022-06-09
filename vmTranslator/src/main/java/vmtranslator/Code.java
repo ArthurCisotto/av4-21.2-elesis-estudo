@@ -89,9 +89,14 @@ public class Code {
             } else if (segment.equals("temp")) {
             
             	// Implementar apenas esta seção!!!
+                Integer poppRam = index + 5;     //Endereco do temp que sera salvo
 
-            	
-            
+                commands.add("leaw $SP,%A");  //Carrega SP
+                commands.add("movw (%A),%A"); //Coloca o ponteiro em %A
+                commands.add("decw %A");      //Decresce o ponteiro
+                commands.add("movw (%A),%D"); //Coloca o valor do topo da pilha em %D
+                commands.add("leaw $" + poppRam.toString() + ",%A"); //Carrega o valor do temp a ser salvo
+                commands.add("movw %D,(%A)"); //Salva o valor do topo da pilha no temp
 
             } else if (segment.equals("pointer")) {
                 if(index==0) {
