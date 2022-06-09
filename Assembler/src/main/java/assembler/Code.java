@@ -19,8 +19,15 @@ public class Code {
      */
     public static String dest_load(String[] mnemnonic) {
         /* TODO: implementar */
-
-
+        if (mnemnonic.length > 3) {
+            return "11";
+        } else if (mnemnonic[2].equals("%A")) {
+            return "00";
+        } else if (mnemnonic[2].equals("%D")) {
+            return "01";
+        } else {
+            return "10";
+        }
     }
 
     /**
